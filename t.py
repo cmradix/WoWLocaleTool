@@ -21,7 +21,7 @@ def parse_arguments() -> argparse.Namespace:
     return parser.parse_args()
 
 def get_default_excluded_dirs() -> Set[str]:
-    return {"language", "lang", "local", "locales", "locale", "locals", "dict"}
+    return {"language", "lang", "local", "locales", "locale", "locals", "dict", "lib", "libs"}
 
 def extract_localization_strings(file_path: Path, identifiers: List[str], encoding: str) -> Dict[str, str]:
     pattern = rf'({"|".join(map(re.escape, identifiers))})\s*[\[\(](["\'])((?:(?!\2).)*)\2[\]\)]'
